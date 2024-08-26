@@ -1,0 +1,20 @@
+# schema.graphql
+
+type User {
+  id: ID!
+  username: String!
+  role: String!
+}
+
+type Query {
+  users: [User!]!
+  currentUser: User
+}
+
+type Mutation {
+  signUp(username: String!, password: String!, role: String!): User
+  login(username: String!, password: String!): String
+  createUser(username: String!, role: String!): User
+  updateUser(id: ID!, username: String, role: String): User
+  deleteUser(id: ID!): Boolean
+}
